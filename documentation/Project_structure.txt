@@ -1,0 +1,35 @@
+text-text-text
+
+Project tree:
+--Project-name v*.*.* /
+  |-.git/
+  |-bin/
+    |-**
+  |-build/
+    |-**
+  |-documentation/
+    |-Project_structure.txt
+    |-syntax_rules.txt
+    |-*.txt;
+  |-libs/
+    |-**
+  |-src/
+    |-utils/
+      |-integrated_cxx_libs.hpp
+      |-utils.cpp
+      |-utils.hpp
+    |-vk/
+      |-utils/
+        |-vkUtils.cpp
+	|-vkUtils.hpp
+      |-createInstance.cpp
+      |-run.cpp
+      |-terminate.cpp
+      |-vk.hpp
+    |-CMakeLists.txt
+    |-main.cpp
+  |-base-kit.cmake
+  |-CMakeLists.txt
+  |-LICENSE.txt
+  |-README.md
+
