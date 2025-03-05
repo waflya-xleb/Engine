@@ -1,0 +1,13 @@
+----------LOG-FILE------------
+"custom message start"
+the custom text
+"custom message end"
+----------DATE--------
+Wed Mar  5 15:17:52 2025
+--------ERROR---------
+type: not fatal
+msg: the custom exception.
+code: 25
+----------------------
+program time: 0.198454s
+----------END-FILE------------

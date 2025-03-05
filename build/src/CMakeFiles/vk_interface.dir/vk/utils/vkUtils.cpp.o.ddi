@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "src/CMakeFiles/vk_interface.dir/vk/utils/vkUtils.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

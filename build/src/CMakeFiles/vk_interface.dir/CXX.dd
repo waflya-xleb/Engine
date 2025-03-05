@@ -1,0 +1,9 @@
+ninja_dyndep_version = 1.0
+build src/CMakeFiles/vk_interface.dir/vk/run.cpp.o: dyndep
+
+build src/CMakeFiles/vk_interface.dir/vk/createInstance.cpp.o: dyndep
+
+build src/CMakeFiles/vk_interface.dir/vk/terminate.cpp.o: dyndep
+
+build src/CMakeFiles/vk_interface.dir/vk/utils/vkUtils.cpp.o: dyndep
+

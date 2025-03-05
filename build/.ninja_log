@@ -1,0 +1,25 @@
+# ninja log v6
+1	234	1741177058719143002	src/CMakeFiles/vk_interface.dir/vk/createInstance.cpp.o.ddi	d1d65f6b61bcf914
+2	252	1741177058719835214	src/CMakeFiles/program_v-0.0.0.1.dir/main.cpp.o.ddi	95529fca4811c9c
+1	298	1741177058719485746	src/CMakeFiles/vk_interface.dir/vk/utils/vkUtils.cpp.o.ddi	402ffcf662478ca4
+1	303	1741177058719305275	src/CMakeFiles/vk_interface.dir/vk/terminate.cpp.o.ddi	6c4db6cfb9fa2f7b
+3	305	1741177058720941760	src/CMakeFiles/program_v-0.0.0.1.dir/utils/utils.cpp.o.ddi	efa7996634480c55
+1	312	1741177058717941734	src/CMakeFiles/vk_interface.dir/vk/run.cpp.o.ddi	5c84c20f214d4291
+305	315	1741177059032047966	src/CMakeFiles/program_v-0.0.0.1.dir/CXX.dd	c511da3a02f47294
+305	315	1741177059032047966	/home/eugene/FILES/programming/Project_vk-n-s/build/src/CMakeFiles/program_v-0.0.0.1.dir/CXXModules.json	c511da3a02f47294
+305	315	1741177059032047966	src/CMakeFiles/program_v-0.0.0.1.dir/main.cpp.o.modmap	c511da3a02f47294
+305	315	1741177059032047966	src/CMakeFiles/program_v-0.0.0.1.dir/utils/utils.cpp.o.modmap	c511da3a02f47294
+312	322	1741177059039218989	src/CMakeFiles/vk_interface.dir/CXX.dd	5ac9fa007bc1f386
+312	322	1741177059039218989	/home/eugene/FILES/programming/Project_vk-n-s/build/src/CMakeFiles/vk_interface.dir/CXXModules.json	5ac9fa007bc1f386
+312	322	1741177059039218989	src/CMakeFiles/vk_interface.dir/vk/run.cpp.o.modmap	5ac9fa007bc1f386
+312	322	1741177059039218989	src/CMakeFiles/vk_interface.dir/vk/createInstance.cpp.o.modmap	5ac9fa007bc1f386
+312	322	1741177059039218989	src/CMakeFiles/vk_interface.dir/vk/terminate.cpp.o.modmap	5ac9fa007bc1f386
+312	322	1741177059039218989	src/CMakeFiles/vk_interface.dir/vk/utils/vkUtils.cpp.o.modmap	5ac9fa007bc1f386
+324	2429	1741177059040944525	src/CMakeFiles/vk_interface.dir/vk/utils/vkUtils.cpp.o	bd43d26a9ffa66c2
+323	2709	1741177059039944516	src/CMakeFiles/vk_interface.dir/vk/createInstance.cpp.o	d8ded8b3a60c0a56
+323	2755	1741177059040867621	src/CMakeFiles/vk_interface.dir/vk/terminate.cpp.o	f1826a4f4f2f0a7d
+322	2777	1741177059039218989	src/CMakeFiles/vk_interface.dir/vk/run.cpp.o	a0201c69db193b16
+2777	2821	1741177061493965752	src/libvk_interface.a	f8ded83b7d717f28
+315	3471	1741177059032047966	src/CMakeFiles/program_v-0.0.0.1.dir/main.cpp.o	a663f4e699adf863
+315	3904	1741177059033095536	src/CMakeFiles/program_v-0.0.0.1.dir/utils/utils.cpp.o	d41070963c55806b
+3904	3978	1741177062620975520	/home/eugene/FILES/programming/Project_vk-n-s/bin/program_v-0.0.0.1	8ea215d293a6c25f

@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "src/CMakeFiles/program_v-0.0.0.1.dir/utils/utils.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

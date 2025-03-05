@@ -1,0 +1,6 @@
+/home/eugene/FILES/programming/Project_vk-n-s/build/CMakeFiles/edit_cache.dir
+/home/eugene/FILES/programming/Project_vk-n-s/build/CMakeFiles/rebuild_cache.dir
+/home/eugene/FILES/programming/Project_vk-n-s/build/src/CMakeFiles/program_v-0.0.0.1.dir
+/home/eugene/FILES/programming/Project_vk-n-s/build/src/CMakeFiles/vk_interface.dir
+/home/eugene/FILES/programming/Project_vk-n-s/build/src/CMakeFiles/edit_cache.dir
+/home/eugene/FILES/programming/Project_vk-n-s/build/src/CMakeFiles/rebuild_cache.dir
