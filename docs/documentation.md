@@ -8,43 +8,43 @@
 ~~~
 /Project_name_vGENERATION.BRANCH.RELEASE.DEV
 ├── .git/
-|     └─**
+│     └─**
 ├── assets/
-|    ├── images/
-|    |    └─*image
-|    ├── other/
-|    |    └─**
-|    └─**
+│    ├── images/
+│    │    └─*image
+│    ├── other/
+│    │    └─**
+│    └─**
 ├── bin/
-|    └─ **
+│    └─ **
 ├── build/
-|    └─ **
+│    └─ **
 ├── docs/
-|    ├─ documentation.md
-|    ├─ syntax_rules.md
-|    └─ *.txt/.md;
+│    ├─ documentation.md
+│    ├─ syntax_rules.md
+│    └─ *.txt/.md;
 ├── libs/
-|    └─ **
+│    └─ **
 ├── src/
-|    ├── utils/
-|    |    ├─ integrated_cxx_libs.hpp
-|    |    ├─ utils.cpp
-|    |    └─ utils.hpp
-|    ├── vk/
-|    |    ├── utils/
-|    |    |    ├─ vkUtils.cpp
-|	 |    |    ├─ vkUtils.hpp
-|    |    |    ├─ createInstance.cpp
-|    |    |    ├─ run.cpp
-|    |    |    ├─ terminate.cpp
-|    |    |    └─ vk.hpp
-|    ├─ CMakeLists.txt
-|    └─ main.cpp
-|  ├─ .gitignore
-|  ├─ base-kit.cmake
-|  ├─ CMakeLists.txt
-|  ├─ LICENSE.txt
-|  └─ README.md
+│    ├── utils/
+│    │    ├─ integrated_cxx_libs.hpp
+│    │    ├─ utils.cpp
+│    │    └─ utils.hpp
+│    ├── vk/
+│    │    ├── utils/
+│    │    │    ├─ vkUtils.cpp
+│	 │    │    ├─ vkUtils.hpp
+│    │    │    ├─ createInstance.cpp
+│    │    │    ├─ run.cpp
+│    │    │    ├─ terminate.cpp
+│    │    │    └─ vk.hpp
+│    ├─ CMakeLists.txt
+│    └─ main.cpp
+│  ├─ .gitignore
+│  ├─ base-kit.cmake
+│  ├─ CMakeLists.txt
+│  ├─ LICENSE.txt
+│  └─ README.md
   ~~~
 ##### tree rules:
  `**` обозначает любой файл/директория в любом формате
