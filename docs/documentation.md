@@ -12,14 +12,16 @@
 ├── assets/
 |    ├── images/
 |    |    └─*image
+|    ├── other/
+|    |    └─**
 |    └─**
 ├── bin/
 |    └─ **
 ├── build/
 |    └─ **
 ├── docs/
-|    ├─ Project_structure.txt
-|    ├─ syntax_rules.txt
+|    ├─ documentation.md
+|    ├─ syntax_rules.md
 |    └─ *.txt/.md;
 ├── libs/
 |    └─ **
@@ -38,6 +40,7 @@
 |    |    |    └─ vk.hpp
 |    ├─ CMakeLists.txt
 |    └─ main.cpp
+|  ├─ .gitignore
 |  ├─ base-kit.cmake
 |  ├─ CMakeLists.txt
 |  ├─ LICENSE.txt
