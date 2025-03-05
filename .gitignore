@@ -1,2 +1,5 @@
 /build/
 !/build/helper-file.txt
+
+/bin/
+!/bin/helper-file.txt
