@@ -40,7 +40,7 @@ namespace su {
 		fout.open( path );
 
 		if ( !fout.is_open() ) {
-			throw std::runtime_error( "failed to save custom log!" );
+			throw std::runtime_error( "failed to save log!" );
 		} else {
 			fout << "----------LOG-FILE------------\n";
 			fout <<	"\"custom message start\"\n";
@@ -55,7 +55,7 @@ namespace su {
 			fout << "----------END-FILE------------\n";
 		}
 		fout.close();
-	}// custom_log_save()
+	}// log_save()
 
 	void error_log_save( std::string& path, std::string& text, std::string& error_text, std::chrono::duration<float> program_time ) {
 		std::ofstream fout;
@@ -72,7 +72,6 @@ namespace su {
 			std::time_t now_time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
 
 			fout << std::ctime(&now_time);
-			//fout <<	"----------------------\n";
 			fout <<	"--------ERROR---------\n";
 			fout << error_text << "\n";
 			fout <<	"----------------------\n";

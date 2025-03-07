@@ -1,10 +1,4 @@
-set ( "${PROJECT}_VERSION_GENERATION" 0 )
-set ( "${PROJECT}_VERSION_BRANCH" 0 )
-set ( "${PROJECT}_VERSION_RELEASE" 0 )
-set ( "${PROJECT}_VERSION_DEV" 1 )
-set ( "${PROJECT}_VERSION" ${${PROJECT}_VERSION_GENERATION}.${${PROJECT}_VERSION_BRANCH}.${${PROJECT}_VERSION_RELEASE}.${${PROJECT}_VERSION_DEV} )
-
-message( STATUS "Project version: " ${${PROJECT}_VERSION} )
+include ( ../base-kit.cmake )
 
 set ( EXECUTABLE-NAME "program_v-${${PROJECT}_VERSION}" )
 
@@ -16,6 +10,15 @@ find_package(glfw3 3.4 REQUIRED)
 
 add_executable( ${EXECUTABLE-NAME} main.cpp utils/utils.cpp )
 
+add_library( test STATIC test.c )
+
 add_library( vk_interface STATIC vk/run.cpp vk/createInstance.cpp vk/terminate.cpp vk/utils/vkUtils.cpp )
 
-target_link_libraries( ${EXECUTABLE-NAME} PRIVATE Vulkan::Vulkan glfw vk_interface )
+target_link_libraries( ${EXECUTABLE-NAME} PRIVATE Vulkan::Vulkan glfw vk_interface test )
+
+
+#message( STATUS "Project version: " ${${PROJECT}_VERSION} )
+message ( "\n------------------------------\n" )
+message ( "PROJECT NAME: Project_Engine\nPROJECT VERISON: ${ver}\nPROJECT SUPPORTED LANGUAGES: ${supported_languages}\n" )
+message ( "EXECUTABLE-NAME: ${EXECUTABLE-NAME}\nLIBS: Vulkan::Vulkan, glfw\nCUSTOM LIBS:\ntest STATIC test.c\nvk_interface STATIC vk/run.cpp vk/createInstance.cpp vk/terminate.cpp vk/utils/vkUtils.cpp\n" )
+message ( "------------------------------\n" )

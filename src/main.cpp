@@ -1,6 +1,9 @@
 #include "utils/utils.hpp"
 #include <GLFW/glfw3.h>
 #include "vk/vk.hpp"
+extern "C" {
+#include "test.h"
+}
 
 //#define NDEBUG
 
@@ -34,6 +37,8 @@ int main( int argc, const char* argv[] ) {
         	GLFWwindow* window = glfwCreateWindow(100, 200, "Vulkan", nullptr, nullptr);
 
 		vulkan.run();
+
+		std::cout << sum(20, 13) << "\n";
 
 		throw su::custom_exception( "not fatal", "the custom exception.", 25 );
 		//throw std::runtime_error("the error.");

@@ -4,6 +4,10 @@ message ( "Starting compiling project..." )
 
 include ( base-kit.cmake )
 
-set ( PROJECT Project-vk-n-s )
+project(
+	Project_Engine
+	VERSION ${ver}
+	LANGUAGES ${supported_languages})
+
 
 add_subdirectory( src )
