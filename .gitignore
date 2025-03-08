@@ -1,7 +1,4 @@
-# build files
-*
 /build/
-!/build/helper-file.txt
-# bin files
 /bin/
+!/build/helper-file.txt
 !/bin/helper-file.txt
