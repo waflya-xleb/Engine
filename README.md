@@ -1,6 +1,6 @@
 # PROJECT IN DEV
-## EN: Engine
-[ru documentation](https://github.com/waflya-xleb/Engine/blob/master/RU-README.md)
+## Engine
+[ru README](https://github.com/waflya-xleb/Engine/blob/master/RU-README.md) | [documentatian](https://github.com/waflya-xleb/Engine/blob/master/docs/general%20documentation.md)
 ## Description
 Let's just agree that there will be a description here someday, okay?
 ___
