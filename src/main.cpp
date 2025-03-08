@@ -5,6 +5,15 @@ extern "C" {
 #include "test.h"
 }
 
+bool if_sum() {
+	try {
+		std::cout << sum(20, 13) << "\n";
+	} catch (...) {
+		return false;
+	}
+	return true;
+}
+
 //#define NDEBUG
 
 int i = 0;
@@ -38,7 +47,17 @@ int main( int argc, const char* argv[] ) {
 
 		vulkan.run();
 
-		std::cout << sum(20, 13) << "\n";
+		std::cin >> ch;
+
+		if ( ch == "--no-libtest.so" ) {
+			std::cout << "start without libtest.so\n";
+		} else {
+			if ( if_sum() ) {
+				std::cout << "sum success!\n";
+			} else {
+				std::cout << "sum failure.\n";
+			}
+		}
 
 		throw su::custom_exception( "not fatal", "the custom exception.", 25 );
 		//throw std::runtime_error("the error.");

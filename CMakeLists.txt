@@ -1,4 +1,4 @@
-cmake_minimum_required ( VERSION 3.31.5 )
+cmake_minimum_required ( VERSION 3.31.6 )
 
 message ( "Starting compiling project..." )
 
@@ -7,6 +7,7 @@ include ( base-kit.cmake )
 project(
 	Project_Engine
 	VERSION ${ver}
+	DESCRIPTION "just engine."
 	LANGUAGES ${supported_languages})
 
 
