@@ -59,8 +59,8 @@ ___
 ___
 ### text color
 #### $\textcolor{white}{\textsf{white = just text}}$
-#### $\textcolor{notification}{\textsf{blue = notification text}}$
-#### $\textcolor{magneta}{\textsf{magneta = list}}$
+#### $\textcolor{blue}{\textsf{blue = notification text}}$
+#### $\textcolor{violet}{\textsf{magneta = list}}$
 #### $\textcolor{red}{\textsf{red = error}}$
 #### $\textcolor{yellow}{\textsf{yellow = warning}}$
 #### $\textcolor{green}{\textsf{green = success}}$
