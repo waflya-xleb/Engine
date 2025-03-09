@@ -47,7 +47,7 @@ int main( int argc, const char* argv[] ) {
 		vulkan.run();
 
 		int sum_result = 0;
-		if ( !if_sum(20, 13, sum_result) ) {
+		if ( !if_sum(2147483648, 13, sum_result) ) {
 			std::cout << sum_result << " <---sum_result\n";
 		} else {
 			std::cout << FYEL("warning: sum failure.\n");
