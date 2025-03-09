@@ -58,13 +58,13 @@ ___
 
 ___
 ### text color
-#### white = just text
-#### blue = notification text
-#### magneta = list
-#### red = error
-#### yellow = warning
-#### green = success
-#### cyan = пока не придумано.
+#### $\textcolor{white}{\textsf{white = just text}}$
+#### $\textcolor{red}{\textsf{blue = notification text}}$
+#### $\textcolor{red}{\textsf{magneta = list}}$
+#### $\textcolor{red}{\textsf{red = error}}$
+#### $\textcolor{yellow}{\textsf{yellow = warning}}$
+#### $\textcolor{green}{\textsf{green = success}}$
+#### $\textcolor{cyan}{\textsf{cyan = пок ане придумано.}}$ 
 ___
 ### 3. список библиотек для проекта
 ___
