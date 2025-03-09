@@ -1,17 +1,16 @@
 #include "utils/utils.hpp"
-#include <GLFW/glfw3.h>
-#include "vk/vk.hpp"
+#include <vk/vk.hpp>
 extern "C" {
 #include "test.h"
 }
 
-bool if_sum() {
+bool if_sum( int a, int b, int &return_value ) {
 	try {
-		std::cout << sum(20, 13) << "\n";
-	} catch (...) {
-		return false;
+		return_value = sum( a, b );
+		return 0;
+	} catch(...) {
+		return 1;
 	}
-	return true;
 }
 
 //#define NDEBUG
@@ -28,7 +27,7 @@ int main( int argc, const char* argv[] ) {
 
 	auto start = su::timer_start();
 #ifndef NDEBUG
-	std::cout << "The September 21st Incident of Gigi Murin. (the start message*)\n";
+	std::cout << FBLU("The September 21st Incident of Gigi Murin. (the start message*)\n");
 #endif
 	std::string log_path = "log.txt";
 	std::string log_text = "the custom text";
@@ -47,19 +46,14 @@ int main( int argc, const char* argv[] ) {
 
 		vulkan.run();
 
-		std::cin >> ch;
-
-		if ( ch == "--no-libtest.so" ) {
-			std::cout << "start without libtest.so\n";
+		int sum_result = 0;
+		if ( !if_sum(20, 13, sum_result) ) {
+			std::cout << sum_result << " <---sum_result\n";
 		} else {
-			if ( if_sum() ) {
-				std::cout << "sum success!\n";
-			} else {
-				std::cout << "sum failure.\n";
-			}
+			std::cout << FYEL("warning: sum failure.\n");
 		}
 
-		throw su::custom_exception( "not fatal", "the custom exception.", 25 );
+		//throw su::custom_exception( "just error", "the custom exception.", 25 );
 		//throw std::runtime_error("the error.");
 
 		while (!glfwWindowShouldClose(window)) {
@@ -87,42 +81,41 @@ int main( int argc, const char* argv[] ) {
 
 		program_time = su::timer_end( start );
 		log_text = "program end are success!";
-		su::log_save( log_path, log_text, program_time );
+		error_text = "no errors";
+		su::log_save( log_path, log_text, error_text, program_time );
 
 
 	} catch( su::custom_exception& ex ) {
 
-		std::cout << "su::custom_exception\n";
-		std::cout << "type: " << ex.getType() << "\n";
-		std::cout << "msg: " << ex.getMsg() << "\n";
-		std::cout << "code: " << ex.getCode() << "\n";
+		std::cout << FRED("su::custom_exception\n");
+		std::cout << FRED("type: " << ex.getType() << "\n");
+		std::cout << FRED("msg: " << ex.getMsg() << "\n");
+		std::cout << FRED("code: " << ex.getCode() << "\n");
 
 		program_time = su::timer_end( start );
+		log_text = "the program has stopped.";
 		error_text = "type: " + ex.getType() + "\nmsg: " + ex.getMsg() + "\ncode: " + std::to_string(ex.getCode());
 
-		if ( ex.getType() == "not fatal" ) {	
-			su::error_log_save( log_path, log_text, error_text, program_time );
-		}
-		if ( ex.getType() == "fatal" ) {
-			log_text = "the program has stopped, su::custom_exception";
-			su::error_log_save( log_path, log_text, error_text, program_time );
-			exit( -1 );
-		}
+		su::log_save( log_path, log_text, error_text, program_time );
+		exit( -1 );
 
 	} catch( std::exception& ex ) {
 
-		std::cout << "std::exception: " << ex.what() << "\n";
+		std::cout << FRED("std::exception: " << ex.what() << "\n");
+		
 		program_time = su::timer_end( start );
-		error_text = "the program has stopped, std::exception: " + ( std::string )ex.what();
-		su::error_log_save( log_path, log_text, error_text, program_time );
+		log_text = "tre program has stopped.";
+		error_text = "std::exception: " + ( std::string )ex.what();
+		su::log_save( log_path, log_text, error_text, program_time );
 		exit( -1 );
 
 	} catch( ... ) {
 
-		std::cout << "unknown exception.\n";
-		error_text = "the program has stopped, unknown error.";
+		std::cout << FRED("unknown exception.\n");
+		log_text = "the program has stopped.";
+		error_text = "unknown exception.";
 		program_time = su::timer_end( start );
-		su::error_log_save( log_path, log_text, error_text, program_time );
+		su::log_save( log_path, log_text, error_text, program_time );
 		exit( -1 );
 	}
 
