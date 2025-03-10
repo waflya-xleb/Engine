@@ -10,5 +10,6 @@ project(
 	DESCRIPTION "just engine."
 	LANGUAGES ${supported_languages})
 
-
+add_subdirectory( lib/utils )
+add_subdirectory( lib/vk )
 add_subdirectory( src )

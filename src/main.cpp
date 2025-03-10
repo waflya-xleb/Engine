@@ -1,4 +1,3 @@
-#include "utils/utils.hpp"
 #include <vk/vk.hpp>
 extern "C" {
 #include "test.h"

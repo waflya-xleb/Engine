@@ -2,8 +2,8 @@
 #ifndef _VK_HPP_
 #define _VK_HPP_
 
-#include "utils/vkUtils.hpp"
-#include "utils/utils.hpp"
+#include <utils/utils.hpp>
+#include "vkUtils/vkUtils.hpp"
 
 class Vulkan {
 	public:
