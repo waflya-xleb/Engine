@@ -64,7 +64,7 @@ ___
 #### $\textcolor{red}{\textsf{red = error}}$
 #### $\textcolor{yellow}{\textsf{yellow = warning}}$
 #### $\textcolor{green}{\textsf{green = success}}$
-#### $\textcolor{cyan}{\textsf{cyan = пок ане придумано.}}$ 
+#### $\textcolor{cyan}{\textsf{cyan = пока не придумано.}}$ 
 ___
 ### 3. список библиотек для проекта
 ___

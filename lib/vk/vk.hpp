@@ -3,16 +3,17 @@
 #define _VK_HPP_
 
 #include "utils/vkUtils.hpp"
+#include "utils/utils.hpp"
 
 class Vulkan {
 	public:
-		void run();
+		bool run( su::warning_struct &warning_list );
 		void terminate();
-	
+
 	private:
 		VkInstance instance;
 
-		void createInstance();
+		bool createInstance( su::warning_struct &warning_list );
 
 };
 

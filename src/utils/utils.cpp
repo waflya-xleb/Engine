@@ -35,21 +35,27 @@ namespace su {
 		}
 	}// arg_foo()
 
-	void log_save( std::string& path, std::string& text, std::string& error_text, std::chrono::duration<float> program_time ) {
+	void log_save( std::string& path, std::string& text, warning_struct warning_list, std::string& error_text, std::chrono::duration<float> program_time ) {
 		std::ofstream fout;
 		fout.open( path );
 
 		if ( !fout.is_open() ) {
-			throw std::runtime_error( "failed to save log!" );
+			throw std::runtime_error( "\nfailed to save log!\n" );
 		} else {
 			fout << "----------LOG-FILE------------\n";
-			fout <<	"\"custom message start\"\n";
-			fout << text;
-			fout << "\n\"custom message end\"\n";
+			fout <<	"program status: " << text << "\n";
 			fout <<	"----------DATE--------\n";
-			std::time_t now_time = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+			std::time_t now_time = std::chrono::system_clock::to_time_t( std::chrono::system_clock::now() );
 
-			fout << std::ctime(&now_time);
+			fout << std::ctime( &now_time );
+			fout <<	"--------WARNING---------\n";
+			for ( int i = 0; i < warning_list.warning.size(); i++ ) {
+				fout << "warning: " << warning_list.warning[i] << "\n";
+			}
+			fout << "--------WARNING_L2---------\n";
+			for ( int i = 0; i < warning_list.warning_L2.size(); i++ ) {
+				fout << "warning_L2: " << warning_list.warning_L2[i] << "\n";
+			}
 			fout <<	"--------ERROR---------\n";
 			fout << error_text << "\n";
 			fout <<	"----------------------\n";

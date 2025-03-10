@@ -6,6 +6,11 @@
 #include "colors.hpp"
 
 namespace su {
+	struct warning_struct {
+		std::vector< std::string > warning;
+		std::vector< std::string > warning_L2;
+	};
+
 	class custom_exception {
 		public:
 			custom_exception( std::string type, std::string msg, uint32_t code );
@@ -20,7 +25,7 @@ namespace su {
 
 	void arg_function( int argc, const char* argv[] );
 
-	void log_save( std::string& path, std::string& text, std::string& error_text, std::chrono::duration<float> program_time );
+	void log_save( std::string& path, std::string& text, warning_struct warning_list, std::string& error_text, std::chrono::duration<float> program_time );
 
 	std::chrono::time_point<std::chrono::high_resolution_clock> timer_start();
 
