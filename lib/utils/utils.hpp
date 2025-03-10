@@ -13,17 +13,17 @@ namespace su {
 
 	class custom_exception {
 		public:
-			custom_exception( std::string type, std::string msg, uint32_t code );
+			custom_exception( std::string type, std::string msg, uint16_t code );
 			std::string getType();
 			std::string getMsg();
-			uint32_t getCode();
+			uint16_t getCode();
 		private:
 			std::string type;
 			std::string msg;
-			uint32_t code;
+			uint16_t code;
 	};
 
-	void arg_function( int argc, const char* argv[] );
+	void arg_function( uint16_t argc, const char* argv[] );
 
 	void log_save( std::string& path, std::string& text, warning_struct warning_list, std::string& error_text, std::chrono::duration<float> program_time );
 

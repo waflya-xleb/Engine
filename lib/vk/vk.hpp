@@ -5,6 +5,8 @@
 #include <utils/utils.hpp>
 #include "vkUtils/vkUtils.hpp"
 
+//#define VK_NDEBUG_
+
 class Vulkan {
 	public:
 		bool run( su::warning_struct &warning_list );

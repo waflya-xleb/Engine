@@ -1,7 +1,7 @@
 #include "utils.hpp"
 
 namespace su {
-	custom_exception::custom_exception( std::string type, std::string msg, uint32_t code ) {
+	custom_exception::custom_exception( std::string type, std::string msg, uint16_t code ) {
 		this->type = type;
 		this->msg = msg;
 		this->code = code;
@@ -15,19 +15,19 @@ namespace su {
 		return msg;
 	}// getMsg()
 
-	uint32_t custom_exception::getCode() {
+	uint16_t custom_exception::getCode() {
 		return code;
 	}// getCode()
 
-	void arg_function( int argc, const char* argv[] ) {
-		for ( int i = 0; i < argc; i++ ) {
+	void arg_function( uint16_t argc, const char* argv[] ) {
+		for ( uint16_t i = 0; i < argc; i++ ) {
 			if ( std::string( argv[1] ) == "--help" || std::string( argv[1] ) == "-h" ) {
 				std::cout << "-a, --arg <---- показать передаваемые аргументы\n-h, --help <---- показать список команд\n";
 				exit( 0 );
 			}
 			if ( std::string( argv[i] ) == "--arg" || std::string( argv[i] ) == "-a" ) {
 				std::cout << FBLU( "\ninput arguments when running the " << argv[0] << ": " << argc << "\n\n" );
-				for ( int j = 0; j < argc; j++ ) {
+				for ( uint16_t j = 0; j < argc; j++ ) {
 					std::cout << FMAG( "argument " << j << ": " << argv[j] << "\n" );
 				}
 				std::cout << "\n";
@@ -49,11 +49,11 @@ namespace su {
 
 			fout << std::ctime( &now_time );
 			fout <<	"--------WARNING---------\n";
-			for ( int i = 0; i < warning_list.warning.size(); i++ ) {
+			for ( uint16_t i = 0; i < warning_list.warning.size(); i++ ) {
 				fout << "warning: " << warning_list.warning[i] << "\n";
 			}
 			fout << "--------WARNING_L2---------\n";
-			for ( int i = 0; i < warning_list.warning_L2.size(); i++ ) {
+			for ( uint16_t i = 0; i < warning_list.warning_L2.size(); i++ ) {
 				fout << "warning_L2: " << warning_list.warning_L2[i] << "\n";
 			}
 			fout <<	"--------ERROR---------\n";

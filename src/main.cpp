@@ -19,7 +19,7 @@ bool if_sum( int a, int b, int &return_value, su::warning_struct &warning_list )
 
 //#define NDEBUG
 
-int main( int argc, const char* argv[] ) {
+int main( uint16_t argc, const char* argv[] ) {
 	if ( argc > 1 ) {
 		su::arg_function( argc, argv );
 	}
@@ -42,7 +42,7 @@ int main( int argc, const char* argv[] ) {
 		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 		glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
 
-        	GLFWwindow* window = glfwCreateWindow( 100, 200, "Vulkan", nullptr, nullptr );
+        	GLFWwindow* window = glfwCreateWindow( 1080, 720, "vk engine", nullptr, nullptr );
 
 		if ( vulkan.run( warning_list ) ) {
 			warning_list.warning.push_back( "function 'run' in 'vk_interface' library failure. --- main.cpp" );

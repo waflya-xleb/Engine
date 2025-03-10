@@ -2,5 +2,7 @@
 
 void Vulkan::terminate() {
 	vkDestroyInstance(instance, nullptr);
-	std::cout << "vk terminate\n";
+#ifndef VK_NDEBUG_
+	std::cout << FCYN( "vk terminate\n" );
+#endif
 }
