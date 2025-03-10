@@ -49,10 +49,12 @@ namespace su {
 
 			fout << std::ctime( &now_time );
 			fout <<	"--------WARNING---------\n";
+			fout << "warning count: " << warning_list.warning.size() << "\n";
 			for ( uint16_t i = 0; i < warning_list.warning.size(); i++ ) {
 				fout << "warning: " << warning_list.warning[i] << "\n";
 			}
 			fout << "--------WARNING_L2---------\n";
+			fout << "warning_L2 count: " << warning_list.warning_L2.size() << "\n";
 			for ( uint16_t i = 0; i < warning_list.warning_L2.size(); i++ ) {
 				fout << "warning_L2: " << warning_list.warning_L2[i] << "\n";
 			}

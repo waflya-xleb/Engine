@@ -20,7 +20,7 @@ bool Vulkan::createInstance( su::warning_struct &warning_list ) {
 		
 		std::vector< const char* > extensions( glfwExtensions, glfwExtensions + glfwExtensionCount );
 
-#ifndef VK_NDEBUG_
+#ifdef VK_DEBUG_notifications_
 		std::cout << FCYN( "Vulkan extensions: \n" );
 		for ( uint32_t i = 0; i < extensions.size(); i++) {
 			std::cout << FMAG( "\t" << extensions[i] << "\n" );
@@ -30,8 +30,8 @@ bool Vulkan::createInstance( su::warning_struct &warning_list ) {
         	createInfo.ppEnabledExtensionNames = extensions.data();
 
         	std::vector<const char*> validationLayers = {
-        		//"VK_LAYER_LUNARG_object_tracker"
-			"VK_LAYER_KHRONOS_validation"
+        		"VK_LAYER_LUNARG_object_tracker"
+			//"VK_LAYER_KHRONOS_validation"
         		//"VK_LAYER_LUNARG_api_dump"
 			//"VK_LAYER_LUNARG_monitor"
     		};
@@ -41,14 +41,20 @@ bool Vulkan::createInstance( su::warning_struct &warning_list ) {
 
         	if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS) {
 			warning_list.warning_L2.push_back( "failed to create instance in function 'createInstance' in 'vk_interface' library. --- createInstance.cpp" );
+#ifdef VK_DEBUG_L2_
+			std::cout << FYEL( "warning_L2: " << warning_list.warning_L2.back() << "\n" );
+#endif
 			return 1;
         	}
-#ifndef VK_NDEBUG_
+#ifdef VK_DEBUG_notifications_
 		std::cout << FCYN( "create instance success!\n" );
 #endif
 		return 0;
 	} catch(...) {
 		warning_list.warning_L2.push_back( "unknown error in function 'createInstance' in 'vk_interface' library. --- creaeInstance.cpp" );
+#ifdef VK_DEBUG_L2_
+			std::cout << FYEL( "warning_L2: " << warning_list.warning_L2.back() << "\n" );
+#endif
 		return 1;
 	}
 }

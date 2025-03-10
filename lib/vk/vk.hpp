@@ -5,7 +5,8 @@
 #include <utils/utils.hpp>
 #include "vkUtils/vkUtils.hpp"
 
-//#define VK_NDEBUG_
+#define VK_DEBUG_notifications_
+#define VK_DEBUG_L2_
 
 class Vulkan {
 	public:
