@@ -30,8 +30,8 @@ bool Vulkan::createInstance( su::warning_struct &warning_list ) {
         	createInfo.ppEnabledExtensionNames = extensions.data();
 
         	std::vector<const char*> validationLayers = {
-        		"VK_LAYER_LUNARG_object_tracker"
-			//"VK_LAYER_KHRONOS_validation"
+        		//"VK_LAYER_LUNARG_object_tracker"
+			"VK_LAYER_KHRONOS_validation"
         		//"VK_LAYER_LUNARG_api_dump"
 			//"VK_LAYER_LUNARG_monitor"
     		};
