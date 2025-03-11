@@ -77,4 +77,5 @@ namespace su {
 		std::chrono::duration<float> duration = end - start;
 		return duration;
 	}// timer_end()
+
 }// namespace su ( special utils )

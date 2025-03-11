@@ -4,6 +4,7 @@
 
 #include "integrated_cxx_libs.hpp"
 #include "colors.hpp"
+#include "terminal.hpp"
 
 namespace su {
 	struct warning_struct {
@@ -30,6 +31,7 @@ namespace su {
 	std::chrono::time_point<std::chrono::high_resolution_clock> timer_start();
 
 	std::chrono::duration<float> timer_end( std::chrono::time_point<std::chrono::high_resolution_clock>& start );
+
 }// namespace su ( special utils )
 
 #endif

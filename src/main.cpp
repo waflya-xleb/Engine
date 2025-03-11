@@ -61,18 +61,10 @@ int main( uint16_t argc, const char* argv[] ) {
 		//throw su::custom_exception( "just error", "the custom exception.", 25 );
 		//throw std::runtime_error("the error.");
 
-		int i = 0;
-		std::string ch = "";
 		while ( !glfwWindowShouldClose( window ) ) {
-			i++;
-			if ( i == 1000000 ) {
-				i = 0;
-				std::cout << "yaaapi\n";
-				std::cin >> ch;
-				if ( ch == "exit" ) {
-					break;
-				}
-			}
+			su::terminal();
+			break;
+			//std::cout << "yaaapi\n";
 			glfwPollEvents();
         	}
 

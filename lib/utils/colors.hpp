@@ -4,6 +4,14 @@
 
 /* FOREGROUND */
 
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGNETA "\033[35m"
+#define CYAN "\033[36m"
+
 #define RST  "\x1B[0m"
 
 #define KRED  "\x1B[31m"
