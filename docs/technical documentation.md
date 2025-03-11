@@ -48,29 +48,92 @@ ___
 ### 2. warning system
 чтобы программа не падала от каждого чиха был придумал стандарт для абсолютно любой функций.
 #### 2.1 проверка входных данных
-#### 2.2 try catch
+минимальная проверка параметров передаваемых в функцию на достоверность
+пример функции БЕЗ проверки:
+```c
+int sum( int a, int b ) {
+    return a+b;
+}
+```
+если оба передаваемых значению будут болььше половины от максимального значения которое вмещает в себя тип данных `int` то результат возвращаемый функцией не будет корректен.
+чтобы избежать этого, функция должна делать проверку входных данных.
+пример функции с проверкой
+```c
+int sum( int a, int b ) {
+    if ( a <= 1073741823 && b <= 1073741823 ) {
+        return a+b;
+	} else {
+        return 0;
+    }
+}
+```
+#### 2.2 тип переменной bool
+независимо от того возвращает ли функция какие-либо значения или нет, она должа иметь возвращаемый тип bool.
+если функция сработала без ошибок она возвращает `0`, в ином случае она возвращает `1`
+если функция возвращает какие-либо значения то она делает отдельным входным параметром это по ссылке.
+пример:
+```c
+bool sum( int a, int b, int &return_value ) {
+    if ( a <= 1073741823 && b <= 1073741823 ) {
+        return a+b;
+	} else {
+        return 0;
+    }
+}
+```
+#### 2.3 try catch и warning_list
+обычный блок try catch.
+если случалась ошибка, записываем её подробное описание в warning_list.
+```c
+bool sum( int a, int b, int &return_value, su::warning_struct &warning_list ) {
+    try {
+        if ( a <= 1073741823 && b <= 1073741823 ) {
+            return_value = a+b;
+            return 0;
+	    } else {
+		    warning_list.warning_L2.push_back( "max input value for function 'sum' exceeded. in 'myLib' library. --- main.cpp" );
+            return 1;
+        }
+    } catch {
+        warning_list.warning_L2.push_back( "unknown error in function 'sum' in 'myLib' library. --- main.cpp" );
+        return 1;
+    }
+}
+```
 ___
-### custom_exception
+### 3. custom_exception
 
 ___
-### arg_function
+### 3. arg_function
 функция обработки аргументов переданных при запуске программы.
 
 ___
-### text color
+### cli text color
 #### $\textcolor{white}{\textsf{white = just text}}$
-#### $\textcolor{blue}{\textsf{blue = notification text}}$
+#### $\textcolor{blue}{\textsf{blue = main notification}}$
+#### $\textcolor{cyan}{\textsf{cyan = sub notification}}$ 
 #### $\textcolor{violet}{\textsf{magneta = list}}$
 #### $\textcolor{red}{\textsf{red = error}}$
 #### $\textcolor{yellow}{\textsf{yellow = warning}}$
 #### $\textcolor{green}{\textsf{green = success}}$
-#### $\textcolor{cyan}{\textsf{cyan = пока не придумано.}}$ 
 ___
-### 3. список библиотек для проекта
+### 4. список библиотек для проекта
 ___
 1. vulkan
 2. glfw
 3. glm (ещё нет но потом нужна будет)
+4. utils
+___
+### 5. utils
+библиотека предназначенная дать минимально необзодимые функции для удобной работы при написании программы, такие как обработка аргументов передаваемых при запуске программы, создание лог файла, возможность выводить цветной текст, таймер и другие подобные функции.
+#### 5.1 utils.hpp
+главный заголовочный файл.
+#### 5.2 utils.cpp
+файл в котором находятся описания всех функций. ( в будущих версиях библиотеки планируется сделать несколько файлов с разделением на темы. )
+#### 5.3 integrated_cxx_libs.hpp
+заголовочный файл с инклюдами основных стандартных библиотек c++
+#### 5.4 colors.hpp
+заголовочный файл с определением цветов.
 ___
 
 ###### © 06.3.2025 делайте как надо, а как не надо само получится.
