@@ -3,7 +3,7 @@ extern "C" {
 #include "test.h"
 }
 
-bool if_sum( int a, int b, int &return_value, su::warning_struct &warning_list ) {
+bool if_sum( const int a, const int b, int &return_value, su::warning_struct &warning_list ) {
 	try {
 		if ( a <= 1073741823 && b <= 1073741823 ) {
 			return_value = sum( a, b );
@@ -28,7 +28,7 @@ int main( uint16_t argc, const char* argv[] ) {
 #ifndef NDEBUG
 	std::cout << FBLU( "The September 21st Incident of Gigi Murin. (the start message*)\n" );
 #endif
-	std::string log_path = "log.txt";
+	const std::string log_path = "log.txt";
 	std::string log_text = "the custom text";
 	su::warning_struct warning_list;
 	std::string error_text;
@@ -98,10 +98,10 @@ int main( uint16_t argc, const char* argv[] ) {
 		program_time = su::timer_end( start );
 		log_text = "tre program has stopped.";
 		error_text = "std::exception: " + ( std::string )ex.what();
-		
+
 		su::log_save( log_path, log_text, warning_list, error_text, program_time );
 		std::cout << FRED( "std::exception: " << ex.what() << "\n" );
-		
+
 		exit( -1 );
 
 	} catch( ... ) {

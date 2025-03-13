@@ -15,8 +15,10 @@ class Vulkan {
 
 	private:
 		VkInstance instance;
+		VkPhysicalDeviceProperties physicalDevice;
 
 		bool createInstance( su::warning_struct &warning_list );
+		bool createPhysicalDevice();
 
 };
 

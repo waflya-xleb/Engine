@@ -17,7 +17,7 @@ bool Vulkan::createInstance( su::warning_struct &warning_list ) {
  	       	uint32_t glfwExtensionCount = 0;
         	const char** glfwExtensions;
         	glfwExtensions = glfwGetRequiredInstanceExtensions( &glfwExtensionCount );
-		
+
 		std::vector< const char* > extensions( glfwExtensions, glfwExtensions + glfwExtensionCount );
 
 #ifdef VK_DEBUG_notifications_

@@ -26,7 +26,9 @@ namespace su {
 
 			switch ( switch_str( str ) ) {
 				case ls:
+					std::cout << YELLOW << "---------------------\n";
 					system("dir");
+					std::cout << YELLOW << "---------------------\n";
 					break;
 
 

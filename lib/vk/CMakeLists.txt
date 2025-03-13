@@ -13,7 +13,7 @@ find_package(glfw3 3.4 REQUIRED)
 
 include_directories( ../../lib )
 
-add_library( ${PROJECT_NAME} SHARED run.cpp createInstance.cpp terminate.cpp vkUtils/vkUtils.cpp )
+add_library( ${PROJECT_NAME} SHARED run.cpp createInstance.cpp physicalDevice.cpp terminate.cpp vkUtils/vkUtils.cpp )
 add_library( vk::vk_interface ALIAS ${PROJECT_NAME} )
 target_link_libraries( ${PROJECT_NAME} PRIVATE Vulkan::Vulkan )
 target_link_libraries( ${PROJECT_NAME} PUBLIC glfw utils::utils )

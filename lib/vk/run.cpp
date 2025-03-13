@@ -9,6 +9,7 @@ bool Vulkan::run( su::warning_struct &warning_list ) {
 #endif
 			return 1;
 		}
+		createPhysicalDevice();
 		return 0;
 	} catch(...) {
 		warning_list.warning_L2.push_back( "unknown error in function 'run' in 'vk_interface' library. --- run.cpp" );

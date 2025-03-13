@@ -24,9 +24,9 @@ namespace su {
 			uint16_t code;
 	};
 
-	void arg_function( uint16_t argc, const char* argv[] );
+	void arg_function( const uint16_t argc, const char* argv[] );
 
-	void log_save( std::string& path, std::string& text, warning_struct warning_list, std::string& error_text, std::chrono::duration<float> program_time );
+	void log_save( const std::string& path, std::string& text, warning_struct warning_list, std::string& error_text, std::chrono::duration<float> program_time );
 
 	std::chrono::time_point<std::chrono::high_resolution_clock> timer_start();
 
