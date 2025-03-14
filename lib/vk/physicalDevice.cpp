@@ -1,6 +1,6 @@
 #include "vk.hpp"
 
-bool Vulkan::createPhysicalDevice() {
+void Vulkan::createPhysicalDevice() {
 	uint32_t deviceCount = 0;
 	vkEnumeratePhysicalDevices( instance, &deviceCount, nullptr );
 	std::vector <VkPhysicalDevice> devices( deviceCount );
@@ -8,6 +8,4 @@ bool Vulkan::createPhysicalDevice() {
 
 	vkGetPhysicalDeviceProperties( devices.data()[0], &physicalDevice );
 	std::cout << "\nDevice name: " << physicalDevice.deviceName << "\n\n";
-
-	return 0;
 }

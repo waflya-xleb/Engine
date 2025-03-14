@@ -36,6 +36,7 @@ int main( uint16_t argc, const char* argv[] ) {
 
 	try {
 		Vulkan vulkan;
+		bool if_terminate = 1;
 
 		glfwInit();
 
@@ -44,10 +45,15 @@ int main( uint16_t argc, const char* argv[] ) {
 
         	GLFWwindow* window = glfwCreateWindow( 1080, 720, "vk engine", nullptr, nullptr );
 
-		if ( vulkan.run( warning_list ) ) {
-			warning_list.warning.push_back( "function 'run' in 'vk_interface' library failure. --- main.cpp" );
-			std::cout << FYEL( "warning: " << warning_list.warning.back() << "\n" );
-			vulkan.terminate();
+		try {
+			vulkan.run();
+
+		} catch( std::exception& ex ) {
+			if_terminate = 0;
+			std::cout << RED << "vulkan failed!\n\t" << "std::exception: " << ex.what() << "\n" << RESET;
+		} catch(...) {
+			if_terminate = 0;
+			std::cout << RED << "vulkan failed!\n\tunknown error.\n" << RESET;
 		}
 
 		int sum_result = 0;
@@ -61,16 +67,20 @@ int main( uint16_t argc, const char* argv[] ) {
 		//throw su::custom_exception( "just error", "the custom exception.", 25 );
 		//throw std::runtime_error("the error.");
 
+		//std::thread th( su::terminal );
 		while ( !glfwWindowShouldClose( window ) ) {
 			su::terminal();
 			break;
 			//std::cout << "yaaapi\n";
 			glfwPollEvents();
         	}
+		//th.join();
 
 		glfwDestroyWindow( window );
 
-		vulkan.terminate();
+		if ( if_terminate ) {
+			vulkan.terminate();
+		}
 
 		glfwTerminate();
 

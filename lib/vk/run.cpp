@@ -1,21 +1,21 @@
 #include "vk.hpp"
 
-bool Vulkan::run( su::warning_struct &warning_list ) {
+void Vulkan::run() {
 	try {
-		if ( createInstance( warning_list ) ) {
-			warning_list.warning_L2.push_back( "function 'createInstance' in 'vk_interface' library failure. --- run.cpp" );
-#ifdef VK_DEBUG_L2_
-			std::cout << FYEL( "warning_L2: " << warning_list.warning_L2.back() << "\n" );
-#endif
-			return 1;
-		}
+		createInstance();
 		createPhysicalDevice();
-		return 0;
-	} catch(...) {
-		warning_list.warning_L2.push_back( "unknown error in function 'run' in 'vk_interface' library. --- run.cpp" );
-#ifdef VK_DEBUG_L2_
-			std::cout << FYEL( "warning_L2: " << warning_list.warning_L2.back() << "\n" );
+
+	} catch( su::custom_exception& ex ) {
+#ifdef VK_DEBUG_L1_
+		std::cout << YELLOW << "error in Vulkan::run()\n";
+		std::cout << "\tsu::custom_exception\n";
+		std::cout << "\ttype: " << ex.getType() << "\n";
+		std::cout << "\tmsg: " << ex.getMsg() << "\n";
+		std::cout << "\tcode: " << ex.getCode() << "\n" << RESET;
 #endif
-		return 1;
+	} catch( std::exception& ex ) {
+		throw std::runtime_error( ex.what() );
+	} catch(...) {
+		throw std::runtime_error("unknown error.\n");
 	}
 }
