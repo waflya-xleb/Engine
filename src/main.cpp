@@ -26,7 +26,7 @@ int main( uint16_t argc, const char* argv[] ) {
 
 	auto start = su::timer_start();
 #ifndef NDEBUG
-	std::cout << FBLU( "The September 21st Incident of Gigi Murin. (the start message*)\n" );
+	std::cout << ITALIC << BLUE << "The September 21st Incident of Gigi Murin. (the start message*)\n" << RESET;
 #endif
 	const std::string log_path = "log.txt";
 	std::string log_text = "the custom text";
@@ -61,7 +61,7 @@ int main( uint16_t argc, const char* argv[] ) {
 			std::cout << sum_result << " <---sum_result\n";
 		} else {
 			warning_list.warning.push_back( "function 'sum' in 'test' library failure. --- main.cpp" );
-			std::cout << FYEL( "warning: " << warning_list.warning.back() << "\n" );
+			std::cout << YELLOW << "warning: " << warning_list.warning.back() << "\n";
 		}
 
 		//throw su::custom_exception( "just error", "the custom exception.", 25 );
@@ -97,10 +97,10 @@ int main( uint16_t argc, const char* argv[] ) {
 
 		su::log_save( log_path, log_text, warning_list, error_text, program_time );
 
-		std::cout << FRED( "su::custom_exception\n" );
-		std::cout << FRED( "\ttype: " << ex.getType() << "\n" );
-		std::cout << FRED( "\tmsg: " << ex.getMsg() << "\n" );
-		std::cout << FRED( "\tcode: " << ex.getCode() << "\n" );
+		std::cout << RED << "su::custom_exception\n";
+		std::cout << RED << "\ttype: " << ex.getType() << "\n";
+		std::cout << RED << "\tmsg: " << ex.getMsg() << "\n";
+		std::cout << RED << "\tcode: " << ex.getCode() << "\n";
 
 		exit( -1 );
 
@@ -110,7 +110,7 @@ int main( uint16_t argc, const char* argv[] ) {
 		error_text = "std::exception: " + ( std::string )ex.what();
 
 		su::log_save( log_path, log_text, warning_list, error_text, program_time );
-		std::cout << FRED( "std::exception: " << ex.what() << "\n" );
+		std::cout << RED << "std::exception: " << ex.what() << "\n";
 
 		exit( -1 );
 
@@ -120,7 +120,7 @@ int main( uint16_t argc, const char* argv[] ) {
 		program_time = su::timer_end( start );
 		su::log_save( log_path, log_text, warning_list, error_text, program_time );
 
-		std::cout << FRED ("unknown exception.\n" );
+		std::cout << RED << "unknown exception.\n";
 		exit( -1 );
 	}
 

@@ -26,9 +26,9 @@ namespace su {
 				exit( 0 );
 			}
 			if ( std::string( argv[i] ) == "--arg" || std::string( argv[i] ) == "-a" ) {
-				std::cout << FBLU( "\ninput arguments when running the " << argv[0] << ": " << argc << "\n\n" );
+				std::cout << BLUE << "\ninput arguments when running the " << argv[0] << ": " << argc << "\n\n";
 				for ( uint16_t j = 0; j < argc; j++ ) {
-					std::cout << FMAG( "argument " << j << ": " << argv[j] << "\n" );
+					std::cout << MAGNETA << "argument " << j << ": " << argv[j] << "\n";
 				}
 				std::cout << "\n";
 			}

@@ -7,5 +7,5 @@ void Vulkan::createPhysicalDevice() {
 	vkEnumeratePhysicalDevices( instance, &deviceCount, devices.data() );
 
 	vkGetPhysicalDeviceProperties( devices.data()[0], &physicalDevice );
-	std::cout << "\nDevice name: " << physicalDevice.deviceName << "\n\n";
+	std::cout << "Device name: " << physicalDevice.deviceName << "\n\n";
 }

@@ -2,7 +2,6 @@
 #ifndef _VK_HPP_
 #define _VK_HPP_
 
-#include <utils/utils.hpp>
 #include "vkUtils/vkUtils.hpp"
 
 #define VK_DEBUG_notifications_
