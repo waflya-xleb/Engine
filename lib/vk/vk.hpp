@@ -21,7 +21,6 @@ class Vulkan {
 		void createInstance();
 		void createSurface( GLFWwindow* window );
 		void pickPhysicalDevice();
-		void getDeviceName();
 
 };
 

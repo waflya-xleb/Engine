@@ -64,4 +64,7 @@ void Vulkan::createInstance() {
 		//throw su::custom_exception( "create instance error", "failed to create instance.", 1 );
 		throw std::runtime_error("failed to create instance");
         }
+#ifdef VK_DEBUG_notifications_
+	std::cout << GREEN << "create instance success!\n" << RESET;
+#endif
 }
