@@ -46,7 +46,7 @@ int main( uint16_t argc, const char* argv[] ) {
         	GLFWwindow* window = glfwCreateWindow( 1080, 720, "vk engine", nullptr, nullptr );
 
 		try {
-			vulkan.run();
+			vulkan.run( window );
 
 		} catch( std::exception& ex ) {
 			if_terminate = 0;

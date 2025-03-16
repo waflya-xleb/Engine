@@ -10,15 +10,18 @@
 
 class Vulkan {
 	public:
-		void run();
+		void run( GLFWwindow* window );
 		void terminate();
 
 	private:
 		VkInstance instance;
-		VkPhysicalDeviceProperties physicalDevice;
+		VkSurfaceKHR surface;
+		VkPhysicalDevice physicalDevice;
 
 		void createInstance();
-		void createPhysicalDevice();
+		void createSurface( GLFWwindow* window );
+		void pickPhysicalDevice();
+		void getDeviceName();
 
 };
 

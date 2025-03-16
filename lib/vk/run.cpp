@@ -1,9 +1,11 @@
 #include "vk.hpp"
 
-void Vulkan::run() {
+void Vulkan::run( GLFWwindow* window ) {
 	try {
 		createInstance();
-		createPhysicalDevice();
+		createSurface( window );
+		pickPhysicalDevice();
+		getDeviceName();
 
 	} catch( su::custom_exception& ex ) {
 #ifdef VK_DEBUG_L1_
