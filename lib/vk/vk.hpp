@@ -17,10 +17,13 @@ class Vulkan {
 		VkInstance instance;
 		VkSurfaceKHR surface;
 		VkPhysicalDevice physicalDevice;
+		VkDevice device;
+		VkQueue queue;
 
 		void createInstance();
 		void createSurface( GLFWwindow* window );
 		void pickPhysicalDevice();
+		void createLogicalDevice();
 
 };
 

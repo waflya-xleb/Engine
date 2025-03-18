@@ -19,6 +19,8 @@ void Vulkan::createInstance() {
 
 	std::vector< const char* > extensions( glfwExtensions, glfwExtensions + glfwExtensionCount );
 
+	//extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
+
 #ifdef VK_DEBUG_notifications_
 	std::cout << CYAN << "Vulkan extensions: \n";
 	for ( uint32_t i = 0; i < extensions.size(); i++) {

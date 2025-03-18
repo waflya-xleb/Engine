@@ -5,6 +5,7 @@ void Vulkan::run( GLFWwindow* window ) {
 		createInstance();
 		createSurface( window );
 		pickPhysicalDevice();
+		createLogicalDevice();
 
 	} catch( su::custom_exception& ex ) {
 #ifdef VK_DEBUG_L1_
