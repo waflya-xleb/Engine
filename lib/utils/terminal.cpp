@@ -1,86 +1,112 @@
 #include "terminal.hpp"
 
 namespace su {
-	command_list switch_str (std::string const& input_string) {
-		if ( input_string == "ls" || input_string == "clear" || input_string == "cls" || input_string == "cd" || input_string == "mkdir" || input_string == "rmdir" || input_string == "set user name" || input_string == "exit" ) {
-    			if (input_string == "ls") return ls;
-    			if (input_string == "clear" || input_string == "cls") return clear;
-    			if (input_string == "cd") return cd;
-    			if (input_string == "mkdir") return _mkdir;
-    			if (input_string == "rmdir") return _rmdir;
-    			if (input_string == "set user name") return userName;
-    			if (input_string == "exit") return _exit_cli;
-		} else {
-			return unknown;
-		}
-	}// switch_str
 	void terminal() {
+		std::vector< std::string > arguments;
 		std::string str = "";
+		std::string buffer = "";
 		std::string cli_user_name = "user";
-		bool if_while_cli = true;
-
-		while( if_while_cli ) {
+		while( true ) {
 
 			std::cout << MAGNETA << cli_user_name << RESET << "@" << BLUE << "terminal: " << CYAN;
 			std::getline(std::cin, str);
+			str += " ";
+			//std::cin >> str;
 
-			switch ( switch_str( str ) ) {
-				case ls:
-					std::cout << YELLOW << "---------------------\n";
-					system("dir");
-					std::cout << YELLOW << "---------------------\n";
-					break;
+			for ( int i = 0; i < str.size(); i++ ) {
+				if ( str[i] == ' ' && buffer != ""  ) {
+					arguments.push_back( buffer );
+					buffer = "";
+				}
+				if ( str[i] == ' ' ) {
+					continue;
+				}
+				buffer += str[i];
+			}
 
+			if ( arguments.empty() ) {
+				arguments.push_back( "" );
+			}
 
-				case clear:
-					system("clear");
-					break;
+			//for ( int i = 0; i < arguments.size(); i++ ) {
+			//	std::cout << MAGNETA << arguments[i] << RESET << "\n";
+			//}
 
-				case cd:
-					std::cout << RESET << "input path: " << CYAN;
-					std::getline(std::cin, str);
-					if ( chdir( str.c_str() ) == 0 ) {
-						std::cout << GREEN << "directory change\n";
-					} else {
-						std::cout << YELLOW << "failed to change directory.\n";
-					}
-					break;
-
-				case _mkdir:
-					std::cout << RESET << "input directory name: " << CYAN;
-					std::getline(std::cin, str);
-					if ( mkdir( str.c_str(), 0777) == 0 ) {
+			if ( arguments[0] == "mkdir" ) {
+				if ( arguments.size() >= 2 ) {
+					if ( mkdir( arguments[1].c_str(), 0777) == 0 ) {
 						std::cout << GREEN << "new directory created successfully!\n";
 					} else {
 						std::cout << YELLOW << "failed to create new directory.\n";
 					}
-					break;
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
 
-				case _rmdir:
-					std::cout << RESET << "input directory name: " << CYAN;
-					std::getline(std::cin, str);
-					if ( rmdir( str.c_str() ) == 0 ) {
+			} else if ( arguments[0] == "rmdir" ) {
+				if ( arguments.size() >= 2 ) {
+					if ( rmdir( arguments[1].c_str() ) == 0 ) {
 						std::cout << GREEN << "directory remove successfully!\n";
 					} else {
 						std::cout << YELLOW << "failed to remove directory.\n";
 					}
-					break;
-				
-				case userName:
-					std::cout << RESET << "input user name: " << CYAN;
-					std::getline(std::cin, cli_user_name);
-					break;
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
 
-				case _exit_cli:
-					if_while_cli = false;
-					break;
+			} else if ( arguments[0] == "cd" ) {
+				if ( arguments.size() >= 2 ) {
+					if ( chdir( arguments[1].c_str() ) == 0 ) {
+						std::cout << GREEN << "directory change\n";
+					} else {
+						std::cout << YELLOW << "failed to change directory.\n";
+					}
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
 
-				case unknown:
-					break;
-				default:
-					break;
+			} else if ( arguments[0] == "ls" ) {
+				std::cout << YELLOW << "\r" << std::flush;
+				system("dir");
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
 
-			}// switch
+			} else if ( arguments[0] == "clear" || arguments[0] == "cls" ) {
+				system("clear");
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
+			} else if ( arguments[0] == "echo" ) {
+				if ( arguments.size() >= 2 ) {
+					for ( int i = 1; i < arguments.size(); i++ ) {
+						std::cout << RESET << arguments[i] << "\n";
+					}
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
+			} else if ( arguments[0] == "set" ) {
+				if ( arguments.size() >= 3 && arguments[1] == "userName" ) {
+					cli_user_name = arguments[2];
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
+			} else if ( arguments[0] == "exit" ) {
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+				break;
+
+			} else if ( arguments[0] == "" ) {
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+				continue;
+
+			} else {
+				std::cout << "unknown command\n";
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+			}
 		}// while
 	}// terminal()
 }
