@@ -6,9 +6,11 @@ namespace su {
 		std::string str = "";
 		std::string buffer = "";
 		std::string cli_user_name = "user";
+		std::string terminal_name = "terminal";
+		std::string terminal_version = "0.0.2";
 		while( true ) {
 
-			std::cout << MAGNETA << cli_user_name << RESET << "@" << BLUE << "terminal: " << CYAN;
+			std::cout << MAGNETA << cli_user_name << RESET << "@" << BLUE << terminal_name << ": " << CYAN;
 			std::getline(std::cin, str);
 			str += " ";
 			//std::cin >> str;
@@ -89,6 +91,21 @@ namespace su {
 				if ( arguments.size() >= 3 && arguments[1] == "userName" ) {
 					cli_user_name = arguments[2];
 				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
+			} else if ( arguments[0] == "fetch" ) {
+				std::cout << "   ╱|、     " << MAGNETA << cli_user_name << RESET << "@" << BLUE << terminal_name << "\n";
+				std::cout << "  (˚ˎ 。7   -------------\n";
+				std::cout << "   |、˜〵   terminal v" << terminal_version << "\n";
+				std::cout << "   じしˍ,)ノdevice: name\n";
+
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
+			} else if ( arguments[0] == "version" ) {
+				std::cout << "terminal version: " << terminal_version << "\n";
+
 				arguments.erase( arguments.begin(), arguments.end() );
 				arguments[0] = "";
 

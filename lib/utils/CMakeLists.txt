@@ -8,8 +8,8 @@ project( utils
 	VERSION 0.0.1
 	LANGUAGES CXX )
 
-add_library( ${PROJECT_NAME} SHARED utils.cpp terminal.cpp )
+add_library( ${PROJECT_NAME} SHARED utils.cpp )
 add_library( utils::utils ALIAS ${PROJECT_NAME} )
 
-add_library( ${PROJECT_NAME}_terminal SHARED terminal.cpp )
-add_library( utils::terminal ALIAS ${PROJECT_NAME}_terminal )
+#add_library( ${PROJECT_NAME}_terminal SHARED terminal.cpp )
+#add_library( utils::terminal ALIAS ${PROJECT_NAME}_terminal )

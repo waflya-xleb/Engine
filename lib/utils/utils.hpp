@@ -4,7 +4,6 @@
 
 #include "integrated_cxx_libs.hpp"
 #include "colors.hpp"
-#include "terminal.hpp"
 
 namespace su {
 	struct warning_struct {

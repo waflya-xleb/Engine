@@ -8,7 +8,7 @@ add_executable( ${EXECUTABLE-NAME} main.cpp )
 
 add_library( test SHARED test.c )
 
-target_link_libraries( ${EXECUTABLE-NAME} PRIVATE vk::vk_interface test )
+target_link_libraries( ${EXECUTABLE-NAME} PRIVATE vk::vk_interface test utils::terminal )
 
 
 #message( STATUS "Project version: " ${${PROJECT}_VERSION} )
