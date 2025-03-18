@@ -1,28 +1,28 @@
 # PROJECT IN DEV
 ## Engine
-[ru README](https://github.com/waflya-xleb/Engine/blob/master/RU-README.md) | [documentatian](https://github.com/waflya-xleb/Engine/blob/master/docs/general%20documentation.md)
+[Русский](https://github.com/waflya-xleb/Engine/blob/master/RU-README.md) | [documentatian](https://github.com/waflya-xleb/Engine/blob/master/docs/general%20documentation.md)
 ## Description
 Let's just agree that there will be a description here someday, okay?
 ___
 ## Installation
-1. cloning the repository:
-~~~
+1. Cloning the repository:
+~~~java
 git clone https://github.com/waflya-xleb/Engine
 ~~~
-2. go to the `build` directory which is located in the project directory:
-~~~
-cd Engine && cd build
+2. Go to the `build` directory which is located in the project directory:
+~~~shell
+cd Engine/build
 ~~~
 3. Start compiling the project:
-~~~
+~~~shell
 cmake -G "Ninja" .. && ninja
 ~~~
-4. go to the `bin` directory:
-~~~
+4. Go to the `bin` directory:
+~~~shell
 cd ../bin
 ~~~
-5. run the executable file:
-~~~
+5. Run the executable file:
+~~~shell
 ./program-name
 ~~~
 ###### it is very unlikely but it is possible that in the future there may be support for windows...
@@ -62,4 +62,4 @@ ___
 ## Contacts
 To contact the author of the project, write to the email: just.eugene.j@gmail.com
 ___
-###### © 06.3.2025 the end of the document, really the end.
+###### © 18.3.2025 the end of the document, really the end.
