@@ -78,6 +78,44 @@ namespace su {
 				arguments.erase( arguments.begin(), arguments.end() );
 				arguments[0] = "";
 
+			} else if ( arguments[0] == "cat" ) {
+				if ( arguments.size() >= 2 ) {
+					std::ifstream fin;
+					fin.open( arguments[1] );
+
+					if ( fin.is_open() ) {
+						char ch;
+						while ( fin.get( ch ) ) {
+							std::cout << ch;
+						}
+						std::cout << "\n";
+						std::cout << GREEN << "file read successfully!\n";
+					} else {
+						std::cout << YELLOW << "failed to read file.\n";
+					}
+					fin.close();
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
+			} else if ( arguments[0] == "createFile" ) {
+				if ( arguments.size() >= 3 ) {
+					std::ofstream fout;
+					fout.open( arguments[1] );
+
+					if ( fout.is_open() ) {
+						for ( int i = 2; i < arguments.size(); i++ ) {
+							fout << arguments[i] << " ";
+						}
+						std::cout << GREEN << "file write successfully!\n";
+					} else {
+						std::cout << YELLOW << "failed to write file.\n";
+					}
+					fout.close();
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
 			} else if ( arguments[0] == "cd" ) {
 				if ( arguments.size() >= 2 ) {
 					if ( chdir( arguments[1].c_str() ) == 0 ) {
