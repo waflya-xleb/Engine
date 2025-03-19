@@ -1,5 +1,4 @@
 #include <vk/vk.hpp>
-#include <terminal/terminal.hpp>
 extern "C" {
 #include "test.h"
 }
