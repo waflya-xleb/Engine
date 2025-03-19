@@ -56,6 +56,28 @@ namespace su {
 				arguments.erase( arguments.begin(), arguments.end() );
 				arguments[0] = "";
 
+			} else if ( arguments[0] == "rm" ) {
+				if ( arguments.size() >= 2 ) {
+					if ( remove( arguments[1].c_str() ) == 0 ) {
+						std::cout << GREEN << "file remove successfully!\n";
+					} else {
+						std::cout << YELLOW << "failed to remove file.\n";
+					}
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
+			} else if ( arguments[0] == "mv" ) {
+				if ( arguments.size() >= 3 ) {
+					if ( rename( arguments[1].c_str(), arguments[2].c_str() ) == 0 ) {
+						std::cout << GREEN << "file renamed successfully!\n";
+					} else {
+						std::cout << YELLOW << "failed to rename file.\n";
+					}
+				}
+				arguments.erase( arguments.begin(), arguments.end() );
+				arguments[0] = "";
+
 			} else if ( arguments[0] == "cd" ) {
 				if ( arguments.size() >= 2 ) {
 					if ( chdir( arguments[1].c_str() ) == 0 ) {
