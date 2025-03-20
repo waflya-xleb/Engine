@@ -57,7 +57,7 @@ This project uses the [GNU AGPLv3](https://github.com/waflya-xleb/Engine/blob/ma
 ##### 2. Warranty
 > **Warranty limitation: This license explicitly states that it does NOT provide any warranty.**
 ___
-Permissions of this strongest copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. When a modified version is used to provide a service over a network, the complete source code of the modified version must be made available.
+###### Permissions of this strongest copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. When a modified version is used to provide a service over a network, the complete source code of the modified version must be made available.
 ___
 ## Contacts
 To contact the author of the project, write to the email: just.eugene.j@gmail.com
