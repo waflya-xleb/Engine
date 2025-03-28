@@ -2,10 +2,12 @@
 
 void Vulkan::run( GLFWwindow* window ) {
 	try {
+		std::cout << MAGNETA << "start vulkan.run()\tVULKAN THREAD\n" << RESET;
 		createInstance();
 		createSurface( window );
 		pickPhysicalDevice();
 		createLogicalDevice();
+		std::cout << MAGNETA << "end vulkan.run()\tVULKAN THREAD\n" << RESET;
 
 	} catch( su::custom_exception& ex ) {
 #ifdef VK_DEBUG_L1_
