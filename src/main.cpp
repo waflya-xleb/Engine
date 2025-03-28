@@ -18,7 +18,7 @@ bool if_sum( const int a, const int b, int &return_value, su::warning_struct &wa
 }
 
 // ============================ НЕ ОБРАЩАЙТЕ ВНИМАНИЕ ============================
-//class Voxel {
+//class Voxel {       123
 //	public:
 //		double xyz[3] = {0, 0, 0};
 //		float rotate[3] = {0, 0, 0};
