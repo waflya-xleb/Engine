@@ -1,0 +1,3 @@
+[submodule "arch-linux-config"]
+	path = lib/arch-linux-config
+	url = https://github.com/waflya-xleb/arch-linux-config.git

@@ -1,0 +1,45 @@
+window {
+  background-color: rgba(20, 30, 26, 0.4);/*#1a1b26;*/
+}
+
+* {
+  font-family: "Jetbrains Mono";
+  color: #fff;
+}
+
+#scroll {
+  padding: 0rem;
+}
+
+#input {
+  background-color: rgba(20, 30, 26, 0.3);/*#1a1b26;*/
+  color: #ffffff;
+  box-shadow: none;
+  font-size: 0.9rem;
+  padding: 0.0rem;
+}
+
+#inner-box {
+  margin: 0.3rem;
+  font-size: 0.8rem;
+}
+
+#img {
+  margin: 0px 0px;
+}
+
+#entry {
+  border-radius: 0.6rem;
+  margin: 0px 0px;
+}
+
+#entry:selected {
+  background-color: rgba(30, 40, 65, 0.5);/*#c0caf5;*/
+  /*outline-color: #0f0f0f;*/
+}
+
+#text:selected {
+  color: #ffffff; /*#1a1b26;*/
+  margin: 0px 7px;
+}
+
