@@ -11,5 +11,5 @@ project(
 	LANGUAGES ${supported_languages})
 
 add_subdirectory( lib/utils )
-add_subdirectory( lib/vk )
+add_subdirectory( lib/vk_interface )
 add_subdirectory( src )

@@ -3,4 +3,4 @@
 	url = https://github.com/waflya-xleb/vk_interface.git
 [submodule "lib/utils"]
 	path = lib/utils
-	url = https://github.com/waflya-xleb/utils
+	url = https://github.com/waflya-xleb/utils.git
