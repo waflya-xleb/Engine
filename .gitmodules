@@ -1,0 +1,6 @@
+[submodule "lib/utils"]
+	path = lib/utils
+	url = https://github.com/waflya-xleb/utils.git
+[submodule "lib/vk_interface"]
+	path = lib/vk_interface
+	url = https://github.com/waflya-xleb/vk_interface.git
