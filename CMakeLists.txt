@@ -10,6 +10,8 @@ project(
 	DESCRIPTION "just engine."
 	LANGUAGES ${supported_languages})
 
-add_subdirectory( lib/utils )
-add_subdirectory( lib/vk_interface )
+#add_subdirectory( lib/utils utils )
+add_subdirectory( ../../utils utils )
+#add_subdirectory( lib/vk_interface vk_interface )
+add_subdirectory( ../../vk_interface vk_interface )
 add_subdirectory( src )

@@ -2,7 +2,8 @@ include ( ../base-kit.cmake )
 
 set ( EXECUTABLE-NAME "program_v-${PROJECT_VERSION}" )
 
-include_directories( ../lib )
+#include_directories( ../lib )
+include_directories( ../../../ )
 
 add_executable( ${EXECUTABLE-NAME} main.cpp temporary.cpp )
 

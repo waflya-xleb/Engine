@@ -3,14 +3,26 @@
 #define _TEMPORARY_CPP_
 
 #include <vk_interface/vk.hpp>
+extern "C" {
+#include "test.h"
+}
 
 
-void TickFunction( const int tick_per_second, void(*fooPointer)( int a, int b ) );
+void TickFunction( const int tick_per_second, int(*fooPointer)( int a, int b ) );
 
 void wery_hard_math_function( su::Voxel vx[], const float g );
 
 void math_thread_function( su::Voxel voxels[], const int tick_per_second );
 
+bool if_sum( const int a, const int b, int &return_value, su::warning_struct &warning_list );
+
+		//int sum_result = 0;
+		//if ( !if_sum( 30, 13, sum_result, warning_list ) ) {
+		//	std::cout << sum_result << " <---sum_result\n";
+		//} else {
+		//	warning_list.warning.push_back( "function 'sum' in 'test' library failure. --- main.cpp" );
+		//	std::cout << YELLOW << "warning: " << warning_list.warning.back() << "\n";
+		//}
 // ============================ НЕ ОБРАЩАЙТЕ ВНИМАНИЕ ============================
 //class Voxel2 {
 //	public:
