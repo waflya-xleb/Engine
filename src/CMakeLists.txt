@@ -5,7 +5,7 @@ set ( EXECUTABLE-NAME "program_v-${PROJECT_VERSION}" )
 #include_directories( ../lib )
 include_directories( ../../../ )
 
-add_executable( ${EXECUTABLE-NAME} main.cpp temporary.cpp )
+add_executable( ${EXECUTABLE-NAME} main.cpp engine/engine.cpp temporary.cpp )
 
 add_library( test SHARED test.c )
 
