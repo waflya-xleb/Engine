@@ -14,6 +14,7 @@ bool if_sum( const int a, const int b, int &return_value, su::warning_struct &wa
 	}
 }
 
+/*
 void TickFunction( const int tick_per_second, int(*fooPointer)( int a , int b ) ) {
 	auto start = su::timer_start();
 	std::chrono::duration<float> duration;
@@ -56,3 +57,4 @@ void math_thread_function( su::Voxel voxels[], const int tick_per_second ) {
 		std::this_thread::sleep_for( std::chrono::milliseconds( static_cast<ms>( 1000 / tick_per_second ) - std::chrono::duration_cast<ms>( duration ) ) );
 	}
 }
+*/

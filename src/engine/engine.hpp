@@ -14,16 +14,17 @@
 class Engine {
 	public:
 		void start();
-		void createWindow();
+		void createWindow( const uint16_t width, const uint16_t height );
 		void initVulkan();
 		void mainLoop();
 		void end();
 
 	private:
-		GLFWwindow* window;
+		GLFWwindow* window = nullptr;
 		Vulkan vulkan;
 		vk_param param;
-		int a = 24;
+		uint16_t WIDTH = 1280;
+		uint16_t HEIGHT = 720;
 
 };
 
