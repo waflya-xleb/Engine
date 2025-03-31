@@ -22,8 +22,6 @@ int main( uint16_t argc, const char* argv[] ) {
 		Engine engine;
 		engine.start();
 
-		//std::cout << "init time : " << su::timer_end( start ) << "\n";
-
 		engine.end();
 
 	} catch( su::custom_exception& ex ) {
