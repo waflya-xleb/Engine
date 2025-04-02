@@ -5,6 +5,8 @@ void Engine::start() {
 	mkdir( "logs", 0777) == 0 ? std::cout << GREEN << "'logs' dir create success!\n" << RESET : std::cout << YELLOW << "failed to create 'logs' dir\n" << RESET;
 	mkdir( "scripts", 0777) == 0 ? std::cout << GREEN << "'scripts' dir create success!\n" << RESET : std::cout << YELLOW << "failed to create 'scripts' dir\n" << RESET;
 
+	su::action_log_save( "logs/action_log.txt", "===== New program session. =====", true );
+
 	createWindow( WIDTH, HEIGHT );
 	std::thread th_init_vk([&]() { initVulkan(); });
 	th_init_vk.join();

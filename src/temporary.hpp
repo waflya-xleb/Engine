@@ -17,29 +17,16 @@ extern "C" {
 bool if_sum( const int a, const int b, int &return_value, su::warning_struct &warning_list );
 
 
-
-//throw su::custom_exception( "just error", "the custom exception.", 25 );
-//throw std::runtime_error("the error.");
-
 //su::Voxel voxel[2] = { { 10, 10, 10 }, { -10, -10, -10 } };
 //std::thread th_math( math_thread_function, std::ref(voxel), 40 );
 //std::thread th_test([&]() { TickFunction(2, sum); });
 //	th_math.join();
 //	th_test.join();
 
-
-		//int sum_result = 0;
-		//if ( !if_sum( 30, 13, sum_result, warning_list ) ) {
-		//	std::cout << sum_result << " <---sum_result\n";
-		//} else {
-		//	warning_list.warning.push_back( "function 'sum' in 'test' library failure. --- main.cpp" );
-		//	std::cout << YELLOW << "warning: " << warning_list.warning.back() << "\n";
-		//}
 // ============================ НЕ ОБРАЩАЙТЕ ВНИМАНИЕ ============================
 //class Voxel2 {
 //	public:
-//		double xyz[3] = {0, 0, 0};
-//		float rotate[3] = {0, 0, 0};
+//		int xyz[3] = {0, 0, 0};
 //		float scale = 1.0f;
 //
 //		uint8_t rgb[3] = {40, 40, 40};
@@ -59,14 +46,32 @@ bool if_sum( const int a, const int b, int &return_value, su::warning_struct &wa
 //		//uint16_t chunk_index = 0;
 //	private:
 //};
-//	class Voxel {
-//		public:
-//			double xyz[3] = {0, 0, 0};
-//		private:
-//	};
-//Voxel voxel;
-//std::cout << sizeof(voxel) << " : voxel\n";
-//std::cout << sizeof(Voxel) << " : Voxel\n";
+//class Voxel {
+//	public:
+//		int xyz[3] = {0, 0, 0};
+//		float scale = 1.0f;
+//
+//		uint8_t rgb[3] = {40, 40, 40};
+//		float alpha = 1.0;
+//		uint8_t glow = 0;
+//
+//		int material_index = 0;
+//		//uint16_t chunk_index = 0;
+//	private:
+//};
+//struct Material_Water {
+//	uint16_t durability = 65000;
+//	uint8_t bondability = 40;
+//	bool stationary = false;
+//
+//	uint16_t temperature = 20;
+//	uint8_t gravity = 0;
+//	uint8_t mass = 1;
+//	uint8_t density = 1;
+//};
+//struct Material_List {
+//	Material_Water water;
+//};
 // ============================ НЕ ОБРАЩАЙТЕ ВНИМАНИЕ ============================
 
 

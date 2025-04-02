@@ -5,11 +5,24 @@ set ( EXECUTABLE-NAME "program_v-${PROJECT_VERSION}" )
 #include_directories( ../lib )
 include_directories( ../../../ )
 
-add_executable( ${EXECUTABLE-NAME} main.cpp engine/engine.cpp engine/window/createWindow.cpp temporary.cpp )
+add_executable( ${EXECUTABLE-NAME} main.cpp temporary.cpp )
+
+add_library( engine SHARED engine/engine.cpp engine/window/createWindow.cpp )
+set_target_properties( engine PROPERTIES
+	PREFIX ""
+	OUTPUT_NAME "engine"
+	SUFFIX ".so"
+)
 
 add_library( test SHARED test.c )
+set_target_properties( test PROPERTIES
+	PREFIX ""
+	OUTPUT_NAME "test"
+	SUFFIX ".so"
+)
 
-target_link_libraries( ${EXECUTABLE-NAME} PRIVATE vk::vk_interface test )
+
+target_link_libraries( ${EXECUTABLE-NAME} PRIVATE vk::vk_interface test engine )
 
 
 #message( STATUS "Project version: " ${${PROJECT}_VERSION} )
