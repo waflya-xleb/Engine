@@ -16,13 +16,16 @@ class Engine {
 		void start();
 		void createWindow( const uint16_t width, const uint16_t height );
 		void initVulkan();
-		void mainLoop();
+		void mainLoop( const int tick_per_second );
 		void end();
 
 	private:
 		GLFWwindow* window = nullptr;
 		Vulkan vulkan;
 		vk_param param;
+
+		typedef std::chrono::milliseconds ms;
+
 		uint16_t WIDTH = 1280;
 		uint16_t HEIGHT = 720;
 

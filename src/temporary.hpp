@@ -16,6 +16,7 @@ extern "C" {
 
 bool if_sum( const int a, const int b, int &return_value, su::warning_struct &warning_list );
 
+//void print_foo( const std::string str );
 
 //su::Voxel voxel[2] = { { 10, 10, 10 }, { -10, -10, -10 } };
 //std::thread th_math( math_thread_function, std::ref(voxel), 40 );

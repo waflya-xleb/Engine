@@ -11,7 +11,9 @@ void Engine::start() {
 	std::thread th_init_vk([&]() { initVulkan(); });
 	th_init_vk.join();
 	std::cout << RESET << "engine init time : " << su::timer_end( start ) << "\n";
-	mainLoop();
+
+	std::thread th_mainloop( [&]() { mainLoop( 144 ); });
+	th_mainloop.join();
 }
 
 void Engine::initVulkan() {
@@ -24,13 +26,24 @@ void Engine::initVulkan() {
 	//std::thread th_init_vk([&]() { vulkan.run( param ); });
 }
 
-void Engine::mainLoop() {
+void Engine::mainLoop( const int tick_per_second ) {
+	auto start = su::timer_start();
+	std::chrono::duration<float> duration;
+	int current_tick = 0;
+
 	while ( !glfwWindowShouldClose( window ) ) {
-		//std::this_thread::sleep_for( std::chrono::milliseconds( 4000 ) );
-		su::terminal();
-		break;
-		//std::cout << "yaaapi\n";
+
+		duration = su::timer_end( start );
+		start = su::timer_start();
+		current_tick >= tick_per_second ? current_tick = 0 : current_tick++;
+
+		//su::terminal();
+		//break;
+		std::cout << "yaaapi\n";
 		glfwPollEvents();
+
+		duration = su::timer_end( start );
+		std::this_thread::sleep_for( std::chrono::milliseconds( static_cast<ms>( 1000 / tick_per_second ) - std::chrono::duration_cast<ms>( duration ) ) );
         }
 }
 

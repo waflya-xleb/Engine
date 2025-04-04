@@ -14,6 +14,45 @@ bool if_sum( const int a, const int b, int &return_value, su::warning_struct &wa
 	}
 }
 
+
+
+/*
+		std::thread th_test( [&]() {
+				auto start = su::timer_start();
+				std::chrono::duration<float> duration;
+				typedef std::chrono::milliseconds ms;
+				const int tick_per_second = 2;
+				int current_tick = 0;
+				while (true) {
+					duration = su::timer_end( start );
+				//	std::cout << BLUE << "time: " << std::chrono::duration_cast<ms>( duration ) << " | tick: " << current_tick << "\n" << RESET;
+					start = su::timer_start();
+					current_tick >= tick_per_second ? current_tick = 0 : current_tick++;
+
+					print_foo( str );
+
+					duration = su::timer_end( start );
+				//	std::cout << BLUE << "excess: " << std::chrono::duration_cast<ms>( duration ) << " | " << RESET;
+					std::this_thread::sleep_for( std::chrono::milliseconds( static_cast<ms>( 1000 / tick_per_second ) - std::chrono::duration_cast<ms>( duration ) ) );
+				}
+				});
+*/
+
+
+
+
+
+		//std::this_thread::sleep_for( std::chrono::milliseconds( 4000 ) );
+
+
+
+
+
+
+//void print_foo( const std::string str ) {
+//	std::cout << str << "\n";
+//}
+
 /*
 void TickFunction( const int tick_per_second, int(*fooPointer)( int a , int b ) ) {
 	auto start = su::timer_start();
