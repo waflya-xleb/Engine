@@ -37,9 +37,9 @@ void Engine::mainLoop( const int tick_per_second ) {
 		start = su::timer_start();
 		current_tick >= tick_per_second ? current_tick = 0 : current_tick++;
 
-		//su::terminal();
-		//break;
-		std::cout << "yaaapi\n";
+		su::terminal();
+		break;
+		//std::cout << "yaaapi\n";
 		glfwPollEvents();
 
 		duration = su::timer_end( start );
