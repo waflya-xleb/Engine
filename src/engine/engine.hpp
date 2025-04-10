@@ -3,12 +3,15 @@
 #define _ENGINE_HPP_
 
 #include <vk_interface/vk.hpp>
+#include <utils/utils.hpp>
 #include "includes.hpp"
 
 #define ENGINE_DEBUG_notifications_
 #define ENGINE_DEBUG_info_
 #define ENGINE_DEBUG_L1_
 #define ENGINE_DEBUG_L2_
+#define ENGINE_DEBUG_warnings_
+#define ENGINE_DEBUG_errors_
 
 
 class Engine {
@@ -28,6 +31,8 @@ class Engine {
 
 		uint16_t WIDTH = 1280;
 		uint16_t HEIGHT = 720;
+
+		bool createDirs();
 
 };
 
