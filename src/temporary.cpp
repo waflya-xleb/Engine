@@ -14,6 +14,9 @@ bool if_sum( const int a, const int b, int &return_value, su::warning_struct &wa
 	}
 }
 
+    			//std::cout << "\033[?25l";
+    			//std::cout << "\033c";
+    			//std::cout << "\033[?25h\nDone!\n";
 
 
 /*
