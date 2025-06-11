@@ -1,3 +1,6 @@
+# ПРОЕКТ ЗАМОРОЖЕН И СКОРЕЕ ВСЕГО НАВСЕГДА.
+# ОН СУЩЕСТВУЕТ ТОЛЬКО РАДИ ТОГО ЧТОБЫ БРАТЬ НЕКОТОРЫЕ КУСКИ КОДА ИЗ НЕГО.
+___
 # PROJECT IN DEV
 ## Engine
 [Русский](https://github.com/waflya-xleb/Engine/blob/master/RU-README.md) | [documentatian](https://github.com/waflya-xleb/Engine/blob/master/docs/general%20documentation.md)
